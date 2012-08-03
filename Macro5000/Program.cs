@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Created by Ryan Hatfield
+// TopHatHacker
+// Free to use, just don't tell me about it. I really don't care.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +17,9 @@ namespace Macro5000
         [DllImport("user32.dll")]
         static extern bool SetForegroundWindow(IntPtr hWnd);
 
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo); 
-
-        public const byte VK_LSHIFT = 0xA0; // left shift key
-        public const byte VK_TAB = 0x09; //tab key
-        public const int KEYEVENTF_EXTENDEDKEY = 0x01;
-        public const int KEYEVENTF_KEYUP = 0x02;
-
         static void Main(string[] args)
         {
+            //this is to start the process from scratch, I'll add the ability to find process by name later
             Process process = new Process();
             process.StartInfo.FileName = "cmd";
             process.Start();
@@ -36,6 +33,8 @@ namespace Macro5000
             SendKeys.SendWait("test");
             //shift tab would be something like
             SendKeys.SendWait("+{TAB}");
+
+            //check out other SendKeys syntax at http://msdn.microsoft.com/en-us/library/system.windows.forms.sendkeys.aspx
         }
 
     }
