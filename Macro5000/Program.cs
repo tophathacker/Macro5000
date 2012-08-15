@@ -1,4 +1,4 @@
-﻿//Created by Ryan Hatfield
+﻿//Created by Ryan Hatfield and Brandon Cuddigan
 // TopHatHacker
 // Free to use, just don't tell me about it. I really don't care.
 
